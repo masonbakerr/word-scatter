@@ -36,9 +36,9 @@ export default function Page() {
   const handleKey = (e) => { if (e.key === "Enter") addWord(); };
 
   return (
-    <div style={{
+    <div className="bg" style={{
       position: "relative", width: "100vw", height: "100vh",
-      background: "#0f0f13", overflow: "hidden",
+      overflow: "hidden",
       fontFamily: "'Segoe UI', sans-serif",
     }}>
       <style>{`
@@ -47,6 +47,20 @@ export default function Page() {
           100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
         }
         .word { animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        @keyframes bgCycle {
+          0%   { background-position: 0% 50%; }
+          50%  { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .bg {
+          background: linear-gradient(
+            135deg,
+            #0f0f13, #1a0533, #0d2b45, #0f3d2e,
+            #2d0f0f, #0f1a30, #1a1a0f, #0f0f13
+          );
+          background-size: 400% 400%;
+          animation: bgCycle 18s ease infinite;
+        }
       `}</style>
 
       {words.map(w => (
