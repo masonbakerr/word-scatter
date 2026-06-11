@@ -77,7 +77,7 @@ export default function Page() {
       ))}
 
       <div style={{
-        position: "absolute", top: "50%", left: "50%",
+        position: "absolute", top: "75%", left: "50%",
         transform: "translate(-50%, -50%)",
         display: "flex", flexDirection: "column", alignItems: "center",
         gap: "12px", zIndex: 10,
